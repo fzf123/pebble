@@ -32,7 +32,7 @@ template<typename T>
 bool Queue<T>::push(const T& obj, bool try_push) {
     pthread_mutex_lock(&_qlock);
     if (_max_size > 0) {
-        // if _max_size <= 0, then queue size is unlimit
+        // queue size is unlimit when max size <= 0
         while (_queue_size.load() >= _max_size) {
             if (try_push) {
                 pthread_mutex_unlock(&_qlock);
