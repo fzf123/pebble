@@ -1,2 +1,2 @@
 # pebble
-- A synchronized queue
+go lib
